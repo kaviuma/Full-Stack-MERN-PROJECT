@@ -1,12 +1,12 @@
 let mongoose = require("mongoose")
 
-let CartSchema = new mongoose.Schema({
+let IdSchema = new mongoose.Schema({
     
-    id : {
+    item : {
         type : String
     }
 });
 
-let Schema = mongoose.model("Cart",CartSchema);
+let IdModel = mongoose.model("Cart",IdSchema);
 
-module.exports = Schema;
+module.exports = IdModel;

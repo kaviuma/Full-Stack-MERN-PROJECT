@@ -29,7 +29,6 @@ function App() {
         <Route path="/electronics" element={<Electronics/>} />
         <Route path="/fashion" element={<Fashion/>} />
         <Route path="/grocery" element={<h2>Grocery</h2>} />
-
         <Route path="/desc/:id" element={<Description />}></Route>
       </Routes>
    

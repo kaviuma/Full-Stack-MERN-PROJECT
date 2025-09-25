@@ -1,10 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { PRODUCT } from "../store/product.store";
 
 const Description = () => {
   let { id } = useParams();
   let { singleproduct, getsingleproduct, addcart } = PRODUCT();
+
+  let [cs,setcs] = useState(false)
+
+  function addtocart(id){
+    addcart(id)
+    setcs(true)
+  }
 
   useEffect(() => {
     getsingleproduct(id);  
@@ -30,16 +37,16 @@ const Description = () => {
 
           <div className="d-flex justify-content-center gap-3 flex-wrap">
             <button 
-              onClick={() => {addcart(id)}} 
+              onClick={() => {addtocart(id)}} disabled={cs} 
               className="btn btn-success btn-lg shadow-sm"
             >
-              Add to Cart
+             {cs ? "Added to cart" : "Add to cart"}
             </button>
-            <button 
+            {/* <button 
               className="btn btn-dark btn-lg shadow-sm"
             >
               Order
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
