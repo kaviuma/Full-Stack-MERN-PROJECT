@@ -191,19 +191,12 @@ module.exports = {
       return res.send("Error to Place Order");
     }
   }
+};
 
 
 
 
-
-
-
-
-
-
-
-
-
+   
 
  
 //   Order: async (req, res) => {
@@ -226,13 +219,6 @@ module.exports = {
 //     return res.send("Error to Place Order");
 //   }
 // }
-
-};
-
-
-
-
-   
 
 
 

@@ -23,11 +23,12 @@ const Description = () => {
 
   return (
     <div className="container py-5">
-      <div className="card shadow-lg border-0 rounded-4 mx-auto" style={{ maxWidth: "600px" }}>
+      <div className="card shadow-lg border-0 rounded-4 mx-auto" style={{ maxWidth: "450px" }}>
         <img 
           src={singleproduct.image_url} 
           className="card-img-top rounded-top-4 img-fluid p-3" 
           alt={singleproduct.name} 
+           style={{ height: "300px", objectFit: "contain" }}
         />
         <div className="card-body text-center">
           <h3 className="card-title mb-3">{singleproduct.name}</h3>
@@ -42,11 +43,7 @@ const Description = () => {
             >
              {cs ? "Added to cart" : "Add to cart"}
             </button>
-            {/* <button 
-              className="btn btn-dark btn-lg shadow-sm"
-            >
-              Order
-            </button> */}
+            
           </div>
         </div>
       </div>
