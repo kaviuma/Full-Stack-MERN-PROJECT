@@ -1,8 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Pages/Navbar";
 import Mobile from "./Pages/Mobile";
-import SignIn from "./components/Signin"
-import HomeNav from "./Pages/HomeNav";
+import SignIn from "./components/Signin";
 import Laptop from "./Pages/Laptop";
 import Television from "./Pages/Television";
 import Cart from "./Pages/Cart";
@@ -10,15 +9,15 @@ import Fashion from "./Pages/Fashion";
 import Electronics from "./Pages/Electronics";
 import Description from "./Pages/Description";
 import Mainhome from "./Pages/Mainhome";
-
+import Grocery from "./Pages/grocery"
+import Notifications from "./Pages/Notification";
 
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
-       <HomeNav/>
-      
+
       <Routes>
         <Route path="/signin" element={<SignIn/>} />
         <Route path="/"element={<Mainhome/>}/>
@@ -28,8 +27,9 @@ function App() {
         <Route path="/televisions" element={<Television/>}/>
         <Route path="/electronics" element={<Electronics/>} />
         <Route path="/fashion" element={<Fashion/>} />
-        <Route path="/grocery" element={<h2>Grocery</h2>} />
+        <Route path="/grocery" element={<Grocery/>} />
         <Route path="/desc/:id" element={<Description />}></Route>
+        <Route path="/notifications" element={<Notifications/>}></Route>
       </Routes>
    
 

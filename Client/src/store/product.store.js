@@ -10,6 +10,7 @@ export let PRODUCT = create((set) => ({
    electronics:[],
    televisions:[],
    fashions:[],
+   groceries:[],
    singleproduct:null,
    item:[],
    orders: [],
@@ -25,7 +26,8 @@ getproduct : async ()=>{
         set({electronics : res.data.electronics})
         set({televisions: res.data.televisions})
         set({fashions: res.data.fashions})
-        
+        set({groceries: res.data.groceries})
+
       console.log(res.data.mobiles,
                   res.data.laptops);
     } 

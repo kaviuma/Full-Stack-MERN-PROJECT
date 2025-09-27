@@ -15,14 +15,14 @@ useEffect(()=>{
       <h2 className="mb-4">Fashions</h2>
       <div className="row">
         {fashions.map((p) => (
-          <div className="col-md-2 mb-4" key={p._id}>
+          <div className="col-md-6 mb-4" key={p._id}>
             <Link to={`/desc/${p._id}`} style={{textDecoration: "none"}}>
             <div className="card h-100 shadow-sm">
               <img
                 src={p.image_url}
                 className="card-img-top"
                 alt={p.name}
-                style={{ height: "300px", objectFit: "cover" }}
+                style={{ height: "300px", objectFit: "contain" }}
               />
               <div className="card-body">
                 <h5 className="card-title">{p.name}</h5>

@@ -1,0 +1,38 @@
+/* Scrollable navbar in mobile */
+@media (max-width: 576px) {
+  .nav-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-scroll .nav-item {
+    flex: 0 0 auto;
+    margin-right: 15px;
+  }
+
+  .nav-scroll::-webkit-scrollbar {
+    display: none; /* hide scrollbar */
+  }
+}
+
+
+/* HomeNav.css */
+.nav-link {
+  /* font-family: "Poppins", sans-serif;  Google Fonts la use panna vendiyadhu */
+  font-size: 15px;                      /* size adjust panna */
+  font-weight: 400;                     /* boldness */
+  color: #ffffff !important;            /* text color */
+  /* text-transform: uppercase;  
+            capitals */
+            text-transform:capitalize;
+  letter-spacing: 1px;                  /* spacing between letters */
+  transition: color 0.3s ease;          /* smooth hover effect */
+}
+
+.nav-link:hover {
+  color: rgb(255, 2, 2) !important; 
+}
+/* .nav-link {
+  font-family: "Poppins", sans-serif;
+} */

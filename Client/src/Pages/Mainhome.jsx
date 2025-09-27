@@ -1,17 +1,14 @@
 import React from 'react'
-import Mobile from "../Pages/Mobile";
-import Electronics from "../Pages/Electronics";
-import Television from "../Pages/Television"
-
+import ShopCarousel from "../Pages/Carousel"
 
 
 
 const Mainhome = () => {
   return (
     <div>
-     <Mobile/>
-      <Electronics/>
-      <Television/>
+
+    
+   <ShopCarousel/>
     </div>
   )
 }

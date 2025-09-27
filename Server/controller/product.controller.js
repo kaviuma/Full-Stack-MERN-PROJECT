@@ -26,15 +26,17 @@ module.exports = {
       let laptops = await product.find({ category: "laptop" });
       let televisions = await product.find({category:"television"});
       let electronics = await product.find({ category: "electronics" });
-      let fashions = await product.find({category : "fashion"})
-
+      let fashions = await product.find({category : "fashion"});
+      let groceries = await product.find({category: "grocery"});
+      
       return res.json({
         msg: "All Products",
         mobiles,
         laptops,
         electronics,
         televisions,
-        fashions
+        fashions,
+        groceries
       });
     }
     catch (e) {
@@ -122,7 +124,7 @@ module.exports = {
        msg: "Error"
       });
   }
-  },
+  }, 
   
   Order: async (req, res) => {
     console.log(req.body);

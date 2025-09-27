@@ -14,7 +14,7 @@ function Mobile() {
       {/* <h2 className="mb-4">Mobiles</h2> */}
       <div className="row">
         {mobiles.map((p) => (
-   <div className="col-md-4 mb-4" key={p._id}>
+   <div className="col-md-6 mb-4" key={p._id}>
             <Link to={`/desc/${p._id}`}
               style={{ textDecoration: "none" }} >
               <div className="card h-100 shadow-sm">
@@ -26,7 +26,7 @@ function Mobile() {
                 />
                 <div className="card-body">
                   <h5 className="card-title">{p.name}</h5>
-                  <p className="card-text">Stock: {p.quantity}</p>
+                  {/* <p className="card-text">Stock: {p.quantity}</p> */}
                   {/* <p className="card-text">{p.description}</p> */}
                   {/* <h6 className="text-success">₹{p.price}</h6> */}
                 </div>
