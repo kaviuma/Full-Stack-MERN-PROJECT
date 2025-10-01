@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { useOrderStore } from "../store/order.store";
+import { PRODUCT } from "../store/product.store";
 
 const Checkout = () => {
-   const placeOrder = useOrderStore((state) => state.placeOrder);
+   const placeOrder = PRODUCT((state) => state.placeOrder);
   const [form, setForm] = useState({
     name: "",
     email: "",

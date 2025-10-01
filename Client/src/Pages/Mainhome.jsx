@@ -1,14 +1,17 @@
 import React from 'react'
-import ShopCarousel from "../Pages/Carousel"
 
+import Footer from "./footer"
+
+import {Slider} from "../Pages/Carousel"
 
 
 const Mainhome = () => {
   return (
     <div>
-
-    
-   <ShopCarousel/>
+      <br /><br /><br />
+<Slider/>
+    <br /><br />
+  <Footer/>
     </div>
   )
 }

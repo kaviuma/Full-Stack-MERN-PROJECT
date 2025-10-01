@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {PRODUCT} from '../store/product.store.js'
+import Footer from "./footer.jsx";
 
 function Mobile() {
   let {getproduct , mobiles} = PRODUCT();
@@ -10,14 +11,15 @@ function Mobile() {
   },[])
 
   return (
-    <div className="container mt-4"><br /><br />
-      {/* <h2 className="mb-4">Mobiles</h2> */}
+    <>
+    <div className="container mt-4 text-center">
+     <h2 className="mb-4">Mobiles</h2>
       <div className="row">
         {mobiles.map((p) => (
-   <div className="col-md-6 mb-4" key={p._id}>
+   <div className="col-md-3 mb-4" key={p._id}>
             <Link to={`/desc/${p._id}`}
               style={{ textDecoration: "none" }} >
-              <div className="card h-100 shadow-sm">
+              <div className="card h-100 shadow-sm" style={{ width: "15rem" }}>
                 <img
                   src={p.image_url}
                   className="card-img-top"
@@ -35,7 +37,10 @@ function Mobile() {
           </div>
         ))}
       </div>
+     
     </div>
+     <Footer/>
+     </>
   );
 }
 

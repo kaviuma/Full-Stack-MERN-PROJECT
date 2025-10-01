@@ -31,16 +31,16 @@ function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Navbar Content */}
+     
         <div className="collapse navbar-collapse" id="navbarContent">
-          {/* Search Bar */}
+          
           <form className="d-flex mx-lg-auto my-2 my-lg-0 w-100 w-lg-50">
             <input
               className="form-control"
               type="search"
               placeholder="Search for products, brands and more"
               aria-label="Search"
-   style={{width:"800px"}}
+  
             />
             <button className="btn btn-primary ms-1" type="submit">
               <i className="bi bi-search"></i>
@@ -49,7 +49,7 @@ function Navbar() {
 
           {/* Right side */}
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0 d-flex flex-column flex-lg-row align-items-lg-center">
-            <li className="nav-item me-lg-2 mb-2 mb-lg-0">
+            <li className="nav-item me-lg-2 mb-2 mb-lg-0" style={{border:"none"}}>
               <Link className="btn btn-light w-100 w-lg-auto" to="/signin">
                 Login
               </Link>
@@ -70,13 +70,8 @@ function Navbar() {
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/customer-care">
-                    Customer Care
-                  </Link>
-                </li>
-                <li>
-                  <Link className="dropdown-item" to="/download">
-                    Download App
+                  <Link className="dropdown-item" to="/contact">
+                   Contact
                   </Link>
                 </li>
               </ul>
@@ -94,7 +89,7 @@ function Navbar() {
       </div>
     </nav>
     {/* Ssecond Navbarr */}
-     <nav className="navbar navbar-dark bg-black">
+     <nav className="navbar navbar-dark bg-primary">
           <div className="container-fluid">
             <ul className="navbar-nav flex-row mx-auto nav-scroll">
               <li className="nav-item px-2">
@@ -119,7 +114,7 @@ function Navbar() {
           </div>
     </nav>
 </>
-  );
+  )
 }
 
 export default Navbar;

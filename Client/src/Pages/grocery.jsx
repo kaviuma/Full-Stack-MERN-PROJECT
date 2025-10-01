@@ -1,22 +1,24 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { PRODUCT } from "../store/product.store.js";
+import Footer from "../Pages/footer.jsx"
 
 function Grocery() {
   const { getproduct, groceries } = PRODUCT();
 
   useEffect(() => {
-    getproduct(); // fetch groceries from API
+    getproduct(); 
   }, []);
 
   return (
+    <>
     <div className="container mt-4">
       <h2 className="mb-4 text-center">Grocery</h2>
       <div className="row">
         {groceries.map((p) => (
-          <div className="col-md-6 col-lg-4 mb-4" key={p._id}>
+          <div className="col-md-6 col-lg-3 mb-4" key={p._id}>
             <Link to={`/desc/${p._id}`} style={{ textDecoration: "none" }}>
-              <div className="card h-100 shadow-sm">
+              <div className="card h-100 shadow-sm" style={{ width: "15rem" }}>
                 {p.image_url ? (
                   <img
                     src={p.image_url}
@@ -47,7 +49,10 @@ function Grocery() {
           </div>
         ))}
       </div>
+      
     </div>
+    <Footer/>
+    </>
   );
 }
 

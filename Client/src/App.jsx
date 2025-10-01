@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Pages/Navbar";
 import Mobile from "./Pages/Mobile";
 import SignIn from "./components/Signin";
+import SignUp from "./components/Signup"
 import Laptop from "./Pages/Laptop";
 import Television from "./Pages/Television";
 import Cart from "./Pages/Cart";
@@ -11,7 +12,7 @@ import Description from "./Pages/Description";
 import Mainhome from "./Pages/Mainhome";
 import Grocery from "./Pages/grocery"
 import Notifications from "./Pages/Notification";
-
+import Contact from "./Pages/contact";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
 
       <Routes>
         <Route path="/signin" element={<SignIn/>} />
+        <Route path="/signup"element={<SignUp/>}></Route>
         <Route path="/"element={<Mainhome/>}/>
         <Route path="/cart" element={<Cart/>} />
         <Route path="/mobiles" element={<Mobile/>} />
@@ -30,6 +32,7 @@ function App() {
         <Route path="/grocery" element={<Grocery/>} />
         <Route path="/desc/:id" element={<Description />}></Route>
         <Route path="/notifications" element={<Notifications/>}></Route>
+        <Route path="/contact" element={<Contact/>}></Route>
       </Routes>
    
 

@@ -12,27 +12,21 @@
   }
 
   .nav-scroll::-webkit-scrollbar {
-    display: none; /* hide scrollbar */
+    display: none;                       /*hide scrollbar*/
   }
 }
 
 
-/* HomeNav.css */
+
 .nav-link {
-  /* font-family: "Poppins", sans-serif;  Google Fonts la use panna vendiyadhu */
-  font-size: 15px;                      /* size adjust panna */
-  font-weight: 400;                     /* boldness */
-  color: #ffffff !important;            /* text color */
-  /* text-transform: uppercase;  
-            capitals */
-            text-transform:capitalize;
-  letter-spacing: 1px;                  /* spacing between letters */
-  transition: color 0.3s ease;          /* smooth hover effect */
+ 
+  font-size: 15px;                  
+  font-weight: 400;                  
+  letter-spacing: 1px;                
+ 
 }
 
 .nav-link:hover {
   color: rgb(255, 2, 2) !important; 
 }
-/* .nav-link {
-  font-family: "Poppins", sans-serif;
-} */
+

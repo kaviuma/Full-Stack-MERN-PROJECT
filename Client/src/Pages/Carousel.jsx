@@ -1,57 +1,130 @@
-import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import React, { useState, useEffect } from "react";
 
-function ShopCarousel() {
+export const Slider = () => {
+  const slidesData = [
+    { img: "https://github.com/kaviuma/Server/blob/main/shop1.jpg?raw=true" },
+    { img: "https://github.com/kaviuma/Server/blob/main/online%20shopping.jpg?raw=true" },
+    { img: "https://github.com/kaviuma/Backend/blob/main/Ai%20delivery.jpg?raw=true" },
+    { img: "https://github.com/kaviuma/Backend/blob/main/Image%20C.jpg?raw=true" },
+    { img: "https://github.com/kaviuma/Server/blob/main/Carousel%202.jpg?raw=true" },
+    { img: "https://github.com/kaviuma/Server/blob/main/Carousel%203.jpg?raw=true" },
+    { img: "https://github.com/kaviuma/Server/blob/main/shop1.jpg?raw=true" },
+    { img: "https://github.com/kaviuma/Server/blob/main/shop1.jpg?raw=true" },
+  ];
+
+  const [startIndex, setStartIndex] = useState(0);
+  const [slidesToShow, setSlidesToShow] = useState(4);
+
+
+  useEffect(() => {
+    const handleResize = () => {
+      const w = window.innerWidth;
+      if (w >= 1024) setSlidesToShow(4);
+      else if (w >= 768) setSlidesToShow(3);
+      else if (w >= 480) setSlidesToShow(2);
+      else setSlidesToShow(1);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const next = () => {
+    if (startIndex + slidesToShow < slidesData.length) {
+      setStartIndex(startIndex + slidesToShow);
+    }
+  };
+
+  const prev = () => {
+    if (startIndex - slidesToShow >= 0) {
+      setStartIndex(startIndex - slidesToShow);
+    }
+  };
+
   return (
-    <div id="shopCarousel" className="carousel slide" data-bs-ride="carousel">
-      <div className="carousel-inner">
-        <div className="carousel-item active">
-          <img
-            src="https://github.com/kaviuma/Server/blob/main/Carousel%201.jpg?raw=true"
-            className="d-block w-100"
-              style={{ height: "1000px", objectFit: "cover" }}
+    <div style={{ position: "relative", margin: "20px" }}>
+     
+      <div style={{ display: "flex", alignItems: "center" }}>
+      
+        {startIndex > 0 && (
+          <button
+            onClick={prev}
+            style={{
+              zIndex: 1,
+              border: "none",
+              background: "rgba(0,0,0,0.5)",
+              color: "#fff",
+              fontSize: "24px",
+              cursor: "pointer",
+              height: "50px",
+              width: "50px",
+              borderRadius: "50%",
+            }}
+          >
+            &#8592;
+          </button>
+        )}
 
-            alt="Shop Banner"
-          />
+        {/* Slides */}
+        <div
+          style={{
+            overflow: "hidden",
+            flex: 1,
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              transition: "transform 0.5s ease",
+              transform: `translateX(-${(startIndex * 100) / slidesToShow}%)`,
+            }}
+          >
+            {slidesData.map((item, index) => (
+              <div
+                key={index}
+                style={{
+                  flex: `0 0 ${100 / slidesToShow}%`,
+                  boxSizing: "border-box",
+                  padding: "5px",
+                }}
+              >
+                <div style={{ borderRadius: "10px", overflow: "hidden" }}>
+                  <img
+                    src={item.img}
+                    alt={`Slide ${index + 1}`}
+                    style={{
+                      width: "100%",
+                      height: "200px",
+                      objectFit: "cover",
+                      display: "block",
+                    }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-        <div className="carousel-item">
-          <img
-            src="https://github.com/kaviuma/Server/blob/main/Carousel%202.jpg?raw=true"
-            className="d-block w-100"
-            alt="Shop Deals"
-          />
-        </div>
-        <div className="carousel-item">
-          <img
-            src="https://raw.githubusercontent.com/kaviuma/Server/c46f58fb98f58addeefeb5b50a9c84e9d822279f/download.jpg"
-            className="d-block w-100"
-            alt="Groceries"
-          />
-        </div>
+
+        {/* Next button */}
+        {startIndex + slidesToShow < slidesData.length && (
+          <button
+            onClick={next}
+            style={{
+              zIndex: 1,
+              border: "none",
+              background: "rgba(0,0,0,0.5)",
+              color: "#fff",
+              fontSize: "24px",
+              cursor: "pointer",
+              height: "50px",
+              width: "50px",
+              borderRadius: "50%",
+            }}
+          >
+            &#8594;
+          </button>
+        )}
       </div>
-
-      <button
-        className="carousel-control-prev"
-        type="button"
-        data-bs-target="#shopCarousel"
-        data-bs-slide="prev"
-      >
-        <span className="carousel-control-prev-icon"></span>
-        <span className="visually-hidden">Previous</span>
-      </button>
-
-      <button
-        className="carousel-control-next"
-        type="button"
-        data-bs-target="#shopCarousel"
-        data-bs-slide="next"
-      >
-        <span className="carousel-control-next-icon"></span>
-        <span className="visually-hidden">Next</span>
-      </button>
     </div>
   );
-}
-
-export default ShopCarousel;
+};

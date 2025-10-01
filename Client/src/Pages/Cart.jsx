@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { PRODUCT } from "../store/product.store";
+import Footer from "./footer";
 
 const CartPage = () => {
   const { item, getAllCart, removeCartItem, placeOrder } = PRODUCT();
@@ -134,7 +135,7 @@ const CartPage = () => {
           Proceed to Order
         </button>
       </div>
-
+<Footer/>
       {/* Checkout Modal */}
       <div className="modal fade" id="orderModal" tabIndex="-1">
         <div className="modal-dialog">
